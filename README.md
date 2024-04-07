@@ -20,6 +20,8 @@ https://mischianti.org/esp-07-high-resolution-pinout-and-specs/
 
 https://www.esp8266.com/wiki/doku.php?id=getting-started-with-the-esp8266
   Getting Started with ESP8266. Basic wiring. Talk to me, baby.
+https://arduino.ua/prod1444-wi-fi-modyl-esp8266-versiya-esp-07
+  Reviews.
 
 # ESP8266
 
@@ -29,6 +31,8 @@ https://www.espressif.com/en/products/socs/esp8266ex/resources
 
 https://docs.platformio.org/en/latest/boards/espressif8266/esp07s.html
   Espressif Generic ESP8266 ESP-07S PlatformIO target.
+https://docs.espressif.com/projects/esp8266-rtos-sdk/en/latest/api-reference/index.html
+  API Reference.  ESP8266 RTOS SDK Programming Guide
 
 https://github.com/espressif/ESP8266_NONOS_SDK
 
@@ -41,14 +45,24 @@ IO2: Default is UP via 12k pullup. No need to configure.
 
 https://mischianti.org/esp-12-esp-07-esp8266-programming-board-and-breadboard-adapter/
   breadboard adapter, UART connection schema.
+https://lastminuteengineers.com/esp8266-pinout-reference
+  ESP8266 Pinout Reference
+https://github.com/esp8266/esp8266-wiki/wiki/Pin-definition
+  ESP8266EX chip pinout is something like this.
 
 74880 - baund rate of boot firmware.
 115200 - baund rate of Ai-Thinker welcome message.
 921600
 
+Flashing boot log??:
+
+```
 ets Jan  8 2013,rst cause:1, boot mode:(1,6)
+```
 
+Regular boot log:
 
+```
 ets Jan  8 2013,rst cause:1, boot mode:(3,6)
 
 load 0x40100000, len 1856, room 16
@@ -75,12 +89,16 @@ rf[114] : 01
 
 SDK ver: 1.5.4.1(39cb9a32) compiled @ Jul  1 2016 20:04:35
 phy ver: 972, pp ver: 10.1
-
+```
 
 # Flashing
 
 https://www.espressif.com/en/support/download/other-tools
   Flash Download Tools.
+https://docs.espressif.com/projects/esptool/en/latest/esp8266/esptool/flashing-firmware.html
+  Esptool is used under the hood of many development frameworks for Espressif SoCs, such as ESP-IDF, Arduino, or PlatformIO
+https://docs.espressif.com/projects/esptool/en/latest/esp8266/troubleshooting.html
+  Troubleshooting.
 
 https://github.com/espressif/esptool
   Espressif SoC serial bootloader utility.
@@ -90,8 +108,31 @@ put the esp8266 into programming mode (switch + reset), upload the sketch, turn 
 The EN (a.k.a. CH_PD or Chip Power Down) pin is the enable pin for the ESP8266, pulled high by
 default. When pulled HIGH, the chip is enabled; when pulled LOW, the chip is disabled.
 
+https://www.best-microcontroller-projects.com/esp-01-programming.html
+  Getting Started with ESP 01 Programming
 https://forum.arduino.cc/t/esp-07-project-based-on-esp-07s-how-to-configure-flash/563654
   how to configure flash?
+https://mischianti.org/esp12-esp07-esp8266-flash-pinout-specs-and-arduino-ide-configuration-6/
+  esp12 esp07 (esp8266): flash, pinout, specs and Arduino IDE configuration – 6
+https://www.instructables.com/ESP8266-07-Programmer-With-Arduino-Nano/
+  ESP8266-07 Programmer With Arduino Nano
+https://techniccontroller.com/how-to-esp8266-programming-with-arduino-ide/
+  How-To: ESP8266 Programming with Arduino IDE
+https://www.instructables.com/Arduino-UNO-ESP8266-WiFi-Module/
+  Arduino UNO + ESP8266 WiFi Module
+https://forum.arduino.cc/t/esp8266-flash-programming-without-ide/572301
+  ESP8266 flash programming without IDE?
+https://community.platformio.org/t/cannot-use-esp07s-board-error-unknown-board-id-esp07s/30841/8
+  I think the 1Mb limit is for program code. You can have a maximum of 1Mb worth of application code.
+  The remaining 3Mb can be used for “spiffs” or “littlefs” file systems where you should be able to
+  store your OTA updates.
+https://github.com/esp8266/esp8266-wiki/wiki/Uploading
+  To upload to the module, configure the following pins.
+https://github.com/esp8266/esp8266-wiki/wiki/Boot-Process
+  Boot Process.
+https://github.com/esp8266/source-code-examples/blob/master/blinky/user/user_main.c
+  Examples of code for the ESP8266.
+
 
 # CH340 USB to TTL (Serial) HW 597 Converter Module
 
@@ -146,6 +187,30 @@ https://www.reddit.com/r/esp8266/comments/96f323/comment/ee0vwn8/
   connected to the device.
 
 https://stackoverflow.com/questions/60263867/problem-with-uploading-bin-file-to-esp8266
-  
+https://www.reddit.com/r/esp32/comments/svoejm/a_question_about_ch340/
+
+# Crypto libs
+
+https://github.com/rweather/arduinolibs
+  Arduino Cryptography Library, has low memory footprint implementations of AES128: AESTiny128, AESSmall128.
+  C++, not packages as PlatformIO.
+https://rweather.github.io/arduinolibs/classAESTiny128.html
+  AES block cipher with 128-bit keys and tiny memory usage. More...
+https://rweather.github.io/arduinolibs/crypto.html
+  Arduino Cryptography Library
+
+
+Other projects:
+
+https://registry.platformio.org/libraries/intrbiz/Crypto
+  This is a minimal, lightweight crypto library for the ESP8266 IOT device.
+https://registry.platformio.org/libraries/obsttube/CryptoAES_CBC
+  Forked from rweather/arduinolibs and modified to work not only on Arduino, but on ESP8266 as well...
+https://registry.platformio.org/libraries/suculent/AESLib
+  AES encryption. Easy-to-use cross-platform AES implementation (128-bit CBC) for low-memory conditions
+https://github.com/suculent/thinx-aes-lib
+  AES wrapper for ESP8266/ESP32/Arduino/nRF5x
+
+
 
 
