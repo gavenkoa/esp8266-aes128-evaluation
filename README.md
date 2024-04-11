@@ -36,10 +36,16 @@ https://www.espressif.com/en/products/socs/esp8266ex/resources
 https://docs.platformio.org/en/latest/boards/espressif8266/esp07s.html
 :   Espressif Generic ESP8266 ESP-07S PlatformIO target.
 
+https://docs.platformio.org/en/stable/platforms/espressif8266.html
+:   Espressif 8266 MCU.
+
 https://docs.espressif.com/projects/esp8266-rtos-sdk/en/latest/api-reference/index.html
 :   API Reference.  ESP8266 RTOS SDK Programming Guide
 
 https://github.com/espressif/ESP8266_NONOS_SDK
+
+https://github.com/esp8266/Arduino
+:  ESP8266 core for Arduino.
 
 # Pinout
 
